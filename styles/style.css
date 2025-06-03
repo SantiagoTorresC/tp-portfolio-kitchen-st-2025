@@ -3,7 +3,7 @@
 /* ? Con este marcaremos dudas especificas */
 /* comentario normal (notas-información) */
 
-/* Global config */
+/* standard settings */
 * {
   margin: 0;
   padding: 0;
@@ -34,4 +34,76 @@ form,
 li {
   font-family: "Lato", sans-serif;
   font-size: 17px;
+}
+
+body {
+  background-color: rgb(38, 37, 37);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  /* En este caso lo uso flex para poder tener los hijos uno al lado del otro */
+  margin: 30px;
+}
+
+.photo-1 {
+  height: 100vh;
+}
+
+.photo-1 img {
+  height: 100vh;
+  object-fit: contain;
+  /* Esta propiedad ajusta una img dentro de su contenedor. El valor contain hace que la img escale hasta tener el mismo tamańo de su contenedor, que en esta seccion es 100% */
+  border-top-left-radius: 50px;
+}
+
+.hero-info {
+  background-color: rgb(255, 255, 255);
+  border-top-right-radius: 50px;
+  padding-top: 90px;
+  /* Este padding es usado para empujar el contenido hacia abajo satisfaciendo gusto de diseño */
+  overflow: hidden;
+  /* Esta propiedad con valor "hidden", hace que el borde superior se aplique bien. Si un elemento se sobresale o desborda, esta propiedad lo recorta, lo deja de hacer visible. En este caso de esta forma el fondo amarillo de "hero-info-1" deja de sobresalir arriba y hace visible el borde. Pasó lo mismo con el caso del hero-info-2, se le sumo el padding top y quedo mas grande que los 100vh de la section HERO, entonces me lo recorto*/
+}
+
+.hero-info-1 {
+  background-color: #fecc01;
+  padding-left: 30px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  box-shadow: 11px 13px 18px 0px rgba(0, 0, 0, 0.75);
+  /* !IT'S NOT FUNCTIONAL YET, the shadow... check how then */
+}
+
+.hero-info-1 h1 {
+  font-size: 45px;
+}
+
+.hero-info-1 p {
+  font-size: 25px;
+  color: rgb(43, 42, 42);
+}
+
+.hero-info-2 {
+  background-color: #e5e3e3;
+  height: 100vh;
+}
+
+.countries {
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 30px;
+  /* Para comenzar a la misma altura que el texto en el hero-info-1 */
+  padding-top: 20px;
+}
+
+.text {
+  padding-left: 30px;
+}
+
+.cta {
+  margin-left: 30px;
+  padding: 10px 97px;
+  margin-top: 20px;
 }
