@@ -33,7 +33,7 @@ a,
 form,
 li {
   font-family: "Lato", sans-serif;
-  font-size: 17px;
+  font-size: 17px
 }
 
 body {
@@ -51,6 +51,7 @@ body {
   height: 100vh;
   border-top-left-radius: 250px;
   /* Si la img fuese mas ancha, quizas habria que darle un width:auto. En este caso la imagen tiene un ancho mas angosto, por eso al darle el height 200vh se ve bien, sin necesidad de darle un valor a esa propiedad. */
+  box-shadow: -13px -12px 36px 4px rgba(252, 248, 170, 0.39);
 }
 
 .hero-info {
