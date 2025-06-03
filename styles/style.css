@@ -97,7 +97,7 @@ body {
 }
 
 .hero-info-2 p {
-  margin-right: 190px;
+  margin-right: 170px;
   /* PRIMERO: Con esta seleccion lo que hice fue modificar exclusivamente la etiqueta p que se encuentra en el div contenedor de hero-info-2. Con este marging lo que cambie es el comportamiento por defecto de la etiqueta p, que es ocupar todo el espacio a lo ancho en formato de bloque. Les dije que de su lado derecho, quiero que se acorten y tengan un margen externo de 190px para con respecto el borde del div. Asi logre que el texto quede mas estetico y compacto a mi gusto.*/
 }
 
@@ -114,9 +114,14 @@ body {
 } */
 /* ESTO SOLO FUNCIONARIA si yo tengo una etqiueta en html con esas dos clases al mismo tiempo dentro de la misma. (class 1: .hero-info class 2: .hijo) */
 
+.last-p-hero {
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 7px;
+}
 
 .cta {
-  padding: 10px 97px;
+  padding: 12px 97px;
   /* el orden de valor de padding es: primer valor: arriba y abajo - segundo valor: 2 costados. Si escribiesemos 4 valores distintos, entonces se aplican en sentido horario, desde arriba hacia la derecha.Si uso un solo valor de padding, se aplicará el mismo a los 4 lados.-*/
   margin-top: 20px;
   font-size: 20px;
@@ -124,13 +129,93 @@ body {
   background-color: #fecc01;
   border: none;
   border-radius: 10px;
+  transition: .1s;
+  position: relative;
+  /* Le doy position relative al boton para que en este caso las lineas que formaran los span estilados vayan hacia el borde del boton y no aparezcan en cualquier parte del html */
+  overflow: hidden;
+  /* Esta propiedad controla QUÉ PASA CON EL CONTENIDO QUE SE SALE del tamaño del contenedor. Nosotros en este caso hicimos que los span salgan del tamaño del contenedor con el estilo que le dimos a cada uno mas abajo (linea 150, 169, 177, 189). 
+  HIDDEN esta ocultando todo esto que se sale, Y CUANDO COMIENZA A ESTAR en el mismo lugar que su contenedor, ahi ya es visible, por eso el movimiento?*/
 }
 
-.last-p-hero {
+button:hover {
   font-weight: bold;
-  font-size: 25px;
-  margin-top: 7px;
+  transform: scale(1.1);
 }
+
+button span {
+  position: absolute;
+  background-color: white;
+  /* Con position absolute lo que hago es poder colocar los span exactamente donde yo quiera respecto al boton: arriba, abajo, izquierda, derecha.*/
+  transition: 0.5s;
+}
+
+button span:nth-child(1) {
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left: -100%
+    /* Con la propiedad: nth-child(1):
+  Le dije a CSS que en el html tome el primer hijo del boton como el span numero 1 para configurar.
+  Con Width le dije que esta linea de borde que estoy armando (para animar) sea del mismo ancho que el box del boton.
+  Con height le dije la altura que tendra la linea (grosor).
+  Con Top le dije que la linea debe estar pegada al box del boton.
+  Con Left en negativo le dije que debe estar posicionado del lado/costado izquierdo pero por fuera del box del boton. Recordar que span es un elemento en linea, por eso se mantiene asi como border.
+  ESTA CONFIGURACION SE REPETIRA PARA CADA SPAN, ASIGNANDOLE EL NUMERO POR ORDEN DE POSICION EN EL HTML DENTRO DE BUTTON. 
+  
+TENER EN CUENTA QUE SI TENGO OTRA ETIQUETA/ELEMENTO ANTES QUE LOS SPAN (ej svg, img, p...) ENTONCES SE ME ROMPE EL ORDEN Y LA LOGICA. 
+Debo cambiar el valor de css y utilizar: 
+:nth-of-type(n) 
+porque de esta forma estamos ignorando los otros elementos ya que solo cuenta los elementos del mismo tipo (que es span porque esta en esa seleccion).*/
+}
+
+button span:nth-child(2) {
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  right: -100%
+    /* Aqui se creo el borde de abajo para animar. el ancho y alto siguen siendo el mismo, pero le cambio la posicion a bottom para que este debajo y a su vez con right en negativo lo pongo en ese costado pero por fuera del box del boton. */
+}
+
+button span:nth-child(3) {
+  width: 4px;
+  height: 100%;
+  bottom: -100%;
+  left: 0
+    /* Aqui estamos cambiando el sentido de este borde creado con span para animar. En los dos span anteriores creamos un borde horizontal, ahora le estamos diciendo que sera vertical y comenzara desde abajo. Lo hacemos asi para que con el hover luego se simule que sube hasta arriba siguiendo el borde del boton.
+   Con width le digo que tiene ese ancho, ese grosor (finito en este caso).
+   Con height le estoy dando toda la altura que tendra, que es del 100% del tamaño del boton.Esto hace que el span se estire verticalmente en linea.
+   Con bottom le digo que comience completamente por debajo del boton, que no este a su misma altura. Verticalmente hablando.
+   Con left le digo que se pegue completamente al lado izquierdo del boton.  */
+}
+
+button span:nth-child(4) {
+  width: 4px;
+  height: 100%;
+  top: -100%;
+  right: 0
+    /* Mismo caso que el de arriba, solo que cambiamos:
+  Con top le digo que comience bien arriba, fuera del boton.
+  Con right le dije que se pegue completamente al lado derecho del boton.   */
+}
+
+button:hover span:nth-child(1) {
+  left: 0;
+}
+
+button:hover span:nth-child(2) {
+  right: 0;
+}
+
+button:hover span:nth-child(3) {
+  bottom: 0;
+}
+
+button:hover span:nth-child(4) {
+  top: 0;
+  /* Aqui debemos entender que le hemos aplicado un hover al boton teniendo en cuenta que al pasar el mouse se le debe dar una propiedad especifica a cada uno de los span. Tenemos que volver a nombrar cada span junto al hover. Y ES MUY IMPORTANTE, que la propiedad y valor que se cambia es la que pusimos como negativa en su estilo de origen. Ponemos lo contrario, lo llevamos a 0, para que de esta forma se posicione exactamente en el borde del boton Y GENERE EL MARCO QUE QUEREMOS CON EL HOVER. TENER EN CUENTA QUE PARA QUE ESTO FUNCIONE, tambien hay que agregar un transition en el llamado de span (ver linea 141 del codigo). */
+}
+
+
 
 /* object-fit: contain; */
 /* Esta propiedad ajusta una img dentro de su contenedor. El valor contain hace que la img escale hasta tener el mismo tamańo de su contenedor, que en esta seccion es 100% */
