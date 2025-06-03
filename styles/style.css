@@ -34,8 +34,6 @@ form,
 li {
   font-family: "Lato", sans-serif;
   font-size: 17px;
-  margin-right: 190px;
-  /* Con este padding lo que cambie es el comportamiento por defecto de la etiqueta p, que es ocupar todo el espacio en formato de bloque.Les dije que de su lado derecho, quiero que se acorten y tengan un margen externo para con respecto al resto. Asi logre que el texto quede mas estetico y compacto a mi gusto.   */
 }
 
 body {
@@ -95,6 +93,11 @@ body {
   background-color: rgb(38, 37, 37);
   color: white;
   padding-left: 30px;
+}
+
+.hero-info-2 p {
+  margin-right: 190px;
+  /* PRIMERO: Con esta seleccion lo que hice fue modificar exclusivamente la etiqueta p que se encuentra en el div contenedor de hero-info-2. Con este marging lo que cambie es el comportamiento por defecto de la etiqueta p, que es ocupar todo el espacio a lo ancho en formato de bloque. Les dije que de su lado derecho, quiero que se acorten y tengan un margen externo de 190px para con respecto el borde del div. Asi logre que el texto quede mas estetico y compacto a mi gusto.*/
 }
 
 .countries {
