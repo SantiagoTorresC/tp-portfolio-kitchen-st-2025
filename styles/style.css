@@ -55,25 +55,23 @@ body {
   height: 100vh;
   object-fit: contain;
   /* Esta propiedad ajusta una img dentro de su contenedor. El valor contain hace que la img escale hasta tener el mismo tamańo de su contenedor, que en esta seccion es 100% */
-  border-top-left-radius: 50px;
+  border-top-left-radius: 250px;
 }
 
 .hero-info {
   background-color: rgb(255, 255, 255);
-  border-top-right-radius: 50px;
-  padding-top: 90px;
-  /* Este padding es usado para empujar el contenido hacia abajo satisfaciendo gusto de diseño */
+  border-top-right-radius: 30px;
   overflow: hidden;
-  /* Esta propiedad con valor "hidden", hace que el borde superior se aplique bien. Si un elemento se sobresale o desborda, esta propiedad lo recorta, lo deja de hacer visible. En este caso de esta forma el fondo amarillo de "hero-info-1" deja de sobresalir arriba y hace visible el borde. Pasó lo mismo con el caso del hero-info-2, se le sumo el padding top y quedo mas grande que los 100vh de la section HERO, entonces me lo recorto*/
+  /* Esta propiedad con valor "hidden", hace que, en este caso, el borde superior se aplique bien. Si un elemento se sobresale o desborda, esta propiedad lo recorta, lo deja de hacer visible. En este caso, logramos que el fondo amarillo de "hero-info-1" deja de sobresalir arriba y hace visible el borde aplicado al contenedor, no lo sobresale más. Pasó lo mismo con el caso del hero-info-2, se le sumo el padding top y quedo mas grande que los 100vh de la section HERO, entonces me lo recorto*/
 }
 
 .hero-info-1 {
   background-color: #fecc01;
   padding-left: 30px;
   padding-top: 60px;
-  padding-bottom: 60px;
-  box-shadow: 11px 13px 18px 0px rgba(0, 0, 0, 0.75);
-  /* !IT'S NOT FUNCTIONAL YET, the shadow... check how then */
+  padding-bottom: 200px;
+  box-shadow: -19px -25px 30px 6px rgba(38, 37, 37, 1) inset;
+  /* TIP: rgba comparado con rgb, lo que hace es agregar un valor extra "alpha -esa a del final, la cual controla la transparencia (opacidad) del color-"  */
 }
 
 .hero-info-1 h1 {
@@ -86,24 +84,39 @@ body {
 }
 
 .hero-info-2 {
-  background-color: #e5e3e3;
+  /* background-color: #e5e3e3; */
   height: 100vh;
+  background-color: rgb(38, 37, 37);
+  color: white;
+  padding-left: 30px;
 }
 
 .countries {
   font-weight: bold;
   font-size: 20px;
-  padding-left: 30px;
   /* Para comenzar a la misma altura que el texto en el hero-info-1 */
   padding-top: 20px;
+  padding-bottom: 15px;
 }
 
-.text {
-  padding-left: 30px;
-}
+/* .hero-info-2.hijo {
+  font-size: 1000px;
+} */
+/* ESTO SOLO FUNCIONARIA si yo tengo una etqiueta en html con esas dos clases al mismo tiempo dentro de la misma. (class 1: .hero-info class 2: .hijo) */
+
 
 .cta {
-  margin-left: 30px;
   padding: 10px 97px;
+  /* el orden de valor de padding es: primer valor: arriba y abajo - segundo valor: 2 costados. Si escribiesemos 4 valores distintos, entonces se aplican en sentido horario, desde arriba hacia la derecha.Si uso un solo valor de padding, se aplicará el mismo a los 4 lados.-*/
   margin-top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fecc01;
+  border: none;
+  border-radius: 10px;
+}
+
+.last-p-hero {
+  font-weight: bold;
+  font-size: 25px;
 }
