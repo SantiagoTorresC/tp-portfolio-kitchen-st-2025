@@ -43,33 +43,37 @@ body {
 .hero {
   height: 100vh;
   display: flex;
-  /* En este caso lo uso flex para poder tener los hijos uno al lado del otro */
+  /* En este caso lo uso flex para poder tener los hijos uno al lado del otro (la foto y la info). Los necesitamos asi para este diseño. */
   margin: 30px;
-}
-
-.photo-1 {
-  height: 100vh;
 }
 
 .photo-1 img {
   height: 100vh;
-  object-fit: contain;
-  /* Esta propiedad ajusta una img dentro de su contenedor. El valor contain hace que la img escale hasta tener el mismo tamańo de su contenedor, que en esta seccion es 100% */
   border-top-left-radius: 250px;
+  /* Si la img fuese mas ancha, quizas habria que darle un width:auto. En este caso la imagen tiene un ancho mas angosto, por eso al darle el height 200vh se ve bien, sin necesidad de darle un valor a esa propiedad. */
 }
 
 .hero-info {
   background-color: rgb(255, 255, 255);
   border-top-right-radius: 30px;
+  height: 100vh;
   overflow: hidden;
   /* Esta propiedad con valor "hidden", hace que, en este caso, el borde superior se aplique bien. Si un elemento se sobresale o desborda, esta propiedad lo recorta, lo deja de hacer visible. En este caso, logramos que el fondo amarillo de "hero-info-1" deja de sobresalir arriba y hace visible el borde aplicado al contenedor, no lo sobresale más. Pasó lo mismo con el caso del hero-info-2, se le sumo el padding top y quedo mas grande que los 100vh de la section HERO, entonces me lo recorto*/
 }
 
 .hero-info-1 {
-  background-color: #fecc01;
+  /* 
   padding-left: 30px;
   padding-top: 60px;
-  padding-bottom: 200px;
+  padding-bottom: 200px; */
+  height: 50vh;
+  background-color: #fecc01;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: flex-start; */
+  /* Con estos cambios, hago que el contenido de este div se pueda organizar facilmente. Usamos FLEX para poder moverlo, cambiar su comportamiento y acomodarlo. Con height le dimos una altura directamente de la mitad de pantalla, porque sabemos que el hero tiene 100vh y queremos que los dos div (hero-info-1 y hero-info-2)ocupen el espacio de hero-info.  */
+  padding-left: 30px;
   box-shadow: -19px -25px 30px 6px rgba(38, 37, 37, 1) inset;
   /* TIP: rgba comparado con rgb, lo que hace es agregar un valor extra "alpha -esa a del final, la cual controla la transparencia (opacidad) del color-"  */
 }
@@ -120,3 +124,6 @@ body {
   font-weight: bold;
   font-size: 25px;
 }
+
+/* object-fit: contain; */
+/* Esta propiedad ajusta una img dentro de su contenedor. El valor contain hace que la img escale hasta tener el mismo tamańo de su contenedor, que en esta seccion es 100% */
