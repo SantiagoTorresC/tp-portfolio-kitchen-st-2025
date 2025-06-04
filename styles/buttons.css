@@ -1,4 +1,4 @@
-.hero .cta {
+.cta {
   padding: 12px 97px;
   /* el orden de valor de padding es: primer valor: arriba y abajo - segundo valor: 2 costados. Si escribiesemos 4 valores distintos, entonces se aplican en sentido horario, desde arriba hacia la derecha.Si uso un solo valor de padding, se aplicará el mismo a los 4 lados.-*/
   margin-top: 20px;
@@ -15,7 +15,7 @@
   HIDDEN esta ocultando todo esto que se sale, Y CUANDO COMIENZA A ESTAR en el mismo lugar que su contenedor, ahi ya es visible, por eso el movimiento?*/
 }
 
-.hero .cta:hover {
+.cta:hover {
   font-weight: bold;
   transform: scale(1.1);
 }
@@ -24,7 +24,7 @@ button span {
   position: absolute;
   background-color: white;
   /* Con position absolute lo que hago es poder colocar los span exactamente donde yo quiera respecto al boton: arriba, abajo, izquierda, derecha.*/
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 button span:nth-child(1) {
