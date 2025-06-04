@@ -1,0 +1,48 @@
+/* ! Se utilizará este tipo de comentario para mostrar IMPORTANTE, PROBLEMAS, REVISION */
+/* TODO - se utilizará este tipo de comentario para mostrar instrucciones/requerimientos (to do list) */
+/* ? Con este marcaremos dudas especificas */
+/* comentario normal (notas-información) */
+
+/* Standard settings */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* General typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+p,
+a,
+form,
+li {
+  font-family: "Lato", sans-serif;
+  font-size: 17px
+}
+
+/* COLOR CODE: 
+#fecc01 YELLOW MUSTARD
+#232323 TEXT
+#f1f1f1 BACKGROUNDS - GALLERY SLIDES - SECTION
+#e2e2e2 CARDS BACKGROUND
+#fecc01 BTN 
+#ffffff WHITE*/
+
+/* More general style */
+body {
+  background-color: rgb(38, 37, 37);
+}
+
+
+
+/* object-fit: contain; */
+/* Esta propiedad ajusta una img dentro de su contenedor. El valor contain hace que la img escale hasta tener el mismo tamańo de su contenedor, que en esta seccion es 100% */
