@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   /* En este caso lo uso flex para poder tener los hijos uno al lado del otro (la foto y la info). Los necesitamos asi para este diseño. */
-  margin: 30px;
+  margin: 30px 30px 0px 30px;
 }
 
 .photo-1 img {

@@ -42,6 +42,26 @@ body {
   background-color: rgb(38, 37, 37);
 }
 
+/* Settings SECTION "MY WORK" */
+.my-work.first {
+  background-color: blueviolet;
+  height: 100vh;
+}
+
+.my-work.second {
+  background-color: aquamarine;
+  height: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* object-fit: contain; */
