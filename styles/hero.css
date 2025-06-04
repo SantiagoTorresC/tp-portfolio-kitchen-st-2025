@@ -57,6 +57,7 @@
 .hero-info-2 p {
   margin-right: 170px;
   /* PRIMERO: Con esta seleccion lo que hice fue modificar exclusivamente la etiqueta p que se encuentra en el div contenedor de hero-info-2. Con este marging lo que cambie es el comportamiento por defecto de la etiqueta p, que es ocupar todo el espacio a lo ancho en formato de bloque. Les dije que de su lado derecho, quiero que se acorten y tengan un margen externo de 190px para con respecto el borde del div. Asi logre que el texto quede mas estetico y compacto a mi gusto.*/
+  font-size: 18px;
 }
 
 .countries {
@@ -72,8 +73,9 @@
 } */
 /* ESTO SOLO FUNCIONARIA si yo tengo una etqiueta en html con esas dos clases al mismo tiempo dentro de la misma. (class 1: .hero-info class 2: .hijo) */
 
-.last-p-hero {
+.last-p-hero p {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 7px;
+  /* ? PREGUNTAR: por que a veces para aplicar correctamente el estilo dentro de una clase, es necesario llamar a la etiqueta dentro de la clase?*/
 }

@@ -18,7 +18,7 @@ h5,
 h6 {
   font-family: "Playfair Display", serif;
   font-weight: bold;
-  font-size: 30px;
+  /* font-size: 30px; */
 }
 
 p,
@@ -26,7 +26,7 @@ a,
 form,
 li {
   font-family: "Lato", sans-serif;
-  font-size: 17px
+  /* font-size: 17px */
 }
 
 /* COLOR CODE: 
